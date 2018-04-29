@@ -12,9 +12,12 @@
 		5A5C8BAA20957686007647A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C8BA820957686007647A5 /* Main.storyboard */; };
 		5A5C8BAC20957686007647A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C8BAB20957686007647A5 /* Assets.xcassets */; };
 		5A5C8BAF20957686007647A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C8BAD20957686007647A5 /* LaunchScreen.storyboard */; };
+		E6556710ACE928CCE5133B2B /* Pods_MovieMash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E79BF07292099D46D96596 /* Pods_MovieMash.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0252D92794F73A423C8EF0F9 /* Pods-MovieMash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieMash/Pods-MovieMash.debug.xcconfig"; sourceTree = "<group>"; };
+		11E79BF07292099D46D96596 /* Pods_MovieMash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieMash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5C8BA120957686007647A5 /* MovieMash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5C8BA420957686007647A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A5C8BA620957686007647A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		5A5C8BAB20957686007647A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A5C8BAE20957686007647A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A5C8BB020957686007647A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6315A973ACABDDC55DD1CF79 /* Pods-MovieMash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMash.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieMash/Pods-MovieMash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6556710ACE928CCE5133B2B /* Pods_MovieMash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3630BF52FCBBFB1D7F494682 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0252D92794F73A423C8EF0F9 /* Pods-MovieMash.debug.xcconfig */,
+				6315A973ACABDDC55DD1CF79 /* Pods-MovieMash.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5A5C8B9820957686007647A5 = {
 			isa = PBXGroup;
 			children = (
 				5A5C8BA320957686007647A5 /* MovieMash */,
 				5A5C8BA220957686007647A5 /* Products */,
+				3630BF52FCBBFB1D7F494682 /* Pods */,
+				884104CA044F4B8B5CF05AEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = MovieMash;
 			sourceTree = "<group>";
 		};
+		884104CA044F4B8B5CF05AEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11E79BF07292099D46D96596 /* Pods_MovieMash.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A5C8BB320957686007647A5 /* Build configuration list for PBXNativeTarget "MovieMash" */;
 			buildPhases = (
+				25F6532E2B616EBD019BDA3E /* [CP] Check Pods Manifest.lock */,
 				5A5C8B9D20957686007647A5 /* Sources */,
 				5A5C8B9E20957686007647A5 /* Frameworks */,
 				5A5C8B9F20957686007647A5 /* Resources */,
+				47755F8ADC0EE00B5107A2C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +156,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25F6532E2B616EBD019BDA3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MovieMash-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47755F8ADC0EE00B5107A2C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MovieMash/Pods-MovieMash-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieMash/Pods-MovieMash-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5A5C8B9D20957686007647A5 /* Sources */ = {
@@ -272,6 +345,7 @@
 		};
 		5A5C8BB420957686007647A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0252D92794F73A423C8EF0F9 /* Pods-MovieMash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +361,7 @@
 		};
 		5A5C8BB520957686007647A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6315A973ACABDDC55DD1CF79 /* Pods-MovieMash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
