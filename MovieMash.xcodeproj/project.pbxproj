@@ -15,6 +15,7 @@
 		5AA0CE75209ABAAF00E016D7 /* movieBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0CE74209ABAAF00E016D7 /* movieBorder.swift */; };
 		5AA0CE77209AC51E00E016D7 /* RatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0CE76209AC51E00E016D7 /* RatingTextField.swift */; };
 		5AA0CE79209AD8AF00E016D7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0CE78209AD8AF00E016D7 /* GameViewController.swift */; };
+		5AE5F7B9209ADFF000E5A876 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE5F7B8209ADFF000E5A876 /* Movie.swift */; };
 		E6556710ACE928CCE5133B2B /* Pods_MovieMash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E79BF07292099D46D96596 /* Pods_MovieMash.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		5AA0CE74209ABAAF00E016D7 /* movieBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieBorder.swift; sourceTree = "<group>"; };
 		5AA0CE76209AC51E00E016D7 /* RatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTextField.swift; sourceTree = "<group>"; };
 		5AA0CE78209AD8AF00E016D7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5AE5F7B8209ADFF000E5A876 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		6315A973ACABDDC55DD1CF79 /* Pods-MovieMash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMash.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieMash/Pods-MovieMash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 		5AA0CE6E209ABA5800E016D7 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				5AE5F7B8209ADFF000E5A876 /* Movie.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -225,8 +228,11 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MovieMash/Pods-MovieMash-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -234,8 +240,11 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -254,6 +263,7 @@
 			files = (
 				5AA0CE79209AD8AF00E016D7 /* GameViewController.swift in Sources */,
 				5AA0CE75209ABAAF00E016D7 /* movieBorder.swift in Sources */,
+				5AE5F7B9209ADFF000E5A876 /* Movie.swift in Sources */,
 				5A5C8BA720957686007647A5 /* ViewController.swift in Sources */,
 				5AA0CE77209AC51E00E016D7 /* RatingTextField.swift in Sources */,
 				5A5C8BA520957686007647A5 /* AppDelegate.swift in Sources */,
