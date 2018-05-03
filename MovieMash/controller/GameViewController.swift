@@ -42,16 +42,25 @@ class GameViewController: UIViewController {
 //        }
 //
         
-        Alamofire.request("http://www.omdbapi.com/?apikey=3d0d5c72&i=tt1285016").responseObject { (response: DataResponse<Movie>) in
+        Alamofire.request("\(BASE_URL)tt1285016").validate().responseObject { (response: DataResponse<Movie>) in
             
-            if let movie = response.result.value{
-                print(movie.name!)
-                print(movie.cast!)
-                print(movie.year.year)
-                print(movie.plot!)
-                print(movie.imageURL!)
-                print(movie.rating!)
+            guard response.result.isSuccess else {
+                print("An error occured retrieving movie with error: \(String(describing: response.error))")
+                return
             }
+    
+            if let movie = response.result.value{
+                print(movie.name)
+                print(movie.cast)
+                print(movie.year.year)
+                print(movie.plot)
+                print(movie.imageURL)
+                print(movie.rating)
+            }
+            
+            
+            
+
 
         }
     }

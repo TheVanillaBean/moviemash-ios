@@ -11,24 +11,48 @@ import ObjectMapper
 import SwiftDate
 
 class Movie: Mappable {
-    var imageURL: String?
-    var name: String?
-    var year: Date!
-    var cast: String?
-    var plot: String?
-    var rating: Int?
+    var _imageURL: String?
+    var _name: String?
+    var _year: Date!
+    var _cast: String?
+    var _plot: String?
+    var _rating: String?
+    
+    var imageURL: String {
+        return _imageURL ?? ""
+    }
+    
+    var name: String {
+        return _name ?? ""
+    }
+    
+    var year: Date {
+        return _year ?? Date()
+    }
+    
+    var cast: String {
+        return _cast ?? ""
+    }
+    
+    var plot: String {
+        return _plot ?? ""
+    }
+    
+    var rating: String {
+        return _rating ?? ""
+    }
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
-        imageURL   <- map["Poster"]
-        name       <- map["Title"]
-        year       <- (map["Year"], yearTranform)
-        cast       <- map["Actors"]
-        plot       <- map["Plot"]
-        rating     <- (map["Ratings.1.Value"], ratingTransform)
+        _imageURL   <- map["Poster"]
+        _name       <- map["Title"]
+        _year       <- (map["Year"], yearTranform)
+        _cast       <- map["Actors"]
+        _plot       <- map["Plot"]
+        _rating     <- (map["Ratings.1.Value"])
     }
     
     //transforms
@@ -47,13 +71,13 @@ class Movie: Mappable {
         return nil
     })
     
-    let ratingTransform = TransformOf<Int, String>(fromJSON: { (ratingString: String?) -> Int? in
-        if let rating = ratingString{
-            return Int(ratingString!)
-        }
-        return nil
-    }, toJSON: { (rating: Int?) -> String? in
-        return String(describing: rating)
-    })
+//    let ratingTransform = TransformOf<Int, String>(fromJSON: { (ratingString: String?) -> Int? in
+//        if let rating = ratingString{
+//            return Int(ratingString!)
+//        }
+//        return nil
+//    }, toJSON: { (rating: Int?) -> String? in
+//        return String(describing: rating)
+//    })
     
 }
