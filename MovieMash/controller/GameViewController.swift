@@ -11,6 +11,7 @@ import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 import SwiftDate
+import AlamofireImage
 
 class GameViewController: UIViewController {
     
@@ -27,50 +28,91 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboard()
         
-//        Alamofire.request("http://www.omdbapi.com/?apikey=3d0d5c72&i=tt1285016").responseJSON { response in
-//            print("Request: \(String(describing: response.request))")   // original url request
-//            print("Response: \(String(describing: response.response))") // http url response
-//            print("Result: \(response.result)")                         // response serialization result
-//
-//            if let json = response.result.value {
-//                let movie = Mapper<Movie>().map(JSONString: json as! String)
-//                print(movie?.name)
-//                print(movie?.cast)
-//            }
-//
-//
-//        }
-//
-        
-        Alamofire.request("\(BASE_URL)tt1285016").validate().responseObject { (response: DataResponse<Movie>) in
+        populateLbls(withMovieID: "tt6644200") { (movie, err) in
             
-            guard response.result.isSuccess else {
-                print("An error occured retrieving movie with error: \(String(describing: response.error))")
+            guard let movie = movie else{
+                if let error = err {
+                    print("Could not retrieve movie with error: \(String(describing: error))")
+                }else{
+                    print("Could not retrieve movie with an unkown error")
+                }
                 return
             }
-    
-            if let movie = response.result.value{
-                print(movie.name)
-                print(movie.cast)
-                print(movie.year.year)
-                print(movie.plot)
-                print(movie.imageURL)
-                print(movie.rating)
-            }
             
+            print(movie.name)
+            print(movie.cast)
+            print(movie.year.year)
+            print(movie.plot)
+            print(movie.imageURL)
+            print(movie.rating)
             
+            self.nameLbl.text = movie.name
+            self.yearLbl.text = String(describing: movie.year.year)
+            self.castLbl.text = movie.cast
+            self.plotLbl.text = movie.plot
             
-
+            self.getImage(withImageUrl: movie.imageURL, imageDownloadCompletion: { (posterImg, err) in
+                
+                guard let poster = posterImg else {
+                    if let error = err {
+                        print("Could not retrieve poster image with error: \(String(describing: error))")
+                    }else{
+                        print("Could not retrieve poster image with an unkown error")
+                    }
+                    return
+                }
+                
+                self.posterImageView.image = poster
+                
+            })
 
         }
+        
     }
+    
+    func populateLbls(withMovieID id: String, movieDownloadCompletion: @escaping (_ movie: Movie?, _ error: Error?) -> ()) {
+        Alamofire.request("\(BASE_URL)\(id)").validate().responseObject { (response: DataResponse<Movie>) in
+            
+            guard response.result.isSuccess else {
+                movieDownloadCompletion(nil, response.error)
+                return
+            }
+            
+            guard let movie = response.result.value else {
+                movieDownloadCompletion(nil, nil)
+                return
+            }
+            
+            movieDownloadCompletion(movie, nil)
+            
+        }
+    }
+    
+    func getImage(withImageUrl url: String, imageDownloadCompletion: @escaping (_ poster: Image?, _ error: Error?) -> ()){
+        Alamofire.request(url).responseImage { response in
+            
+            guard response.result.isSuccess else {
+                imageDownloadCompletion(nil, response.error)
+                return
+            }
+        
+            guard let image = response.result.value else {
+                imageDownloadCompletion(nil, nil)
+                return
+            }
+        
+            imageDownloadCompletion(image, nil)
+
+        }
+        
+    }
+    
 
     @IBAction func closeBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-}
 
+}
 
 extension UIViewController{
     func hideKeyboard(){

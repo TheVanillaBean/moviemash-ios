@@ -15,6 +15,7 @@ target 'MovieMash' do
   pod 'AlamofireObjectMapper', '~> 5.0'
   pod 'ObjectMapper', '~> 3.1'
   pod 'SwiftDate', '~> 4.5.1'
+  pod 'AlamofireImage', '~> 3.3'
 
   post_install do |installer|
       installer.pods_project.build_configurations.each do |config|
