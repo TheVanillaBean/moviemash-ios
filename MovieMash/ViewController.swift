@@ -9,10 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.hideKeyboard()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,3 +25,19 @@ class ViewController: UIViewController {
 
 }
 
+extension UIViewController
+{
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+}
