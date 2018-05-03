@@ -26,9 +26,9 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboard()
+        hideKeyboard()
         
-        populateLbls(withMovieID: "tt6644200") { (movie, err) in
+        AlamofireService.instance.populateLbls(withMovieID: "tt6644200") { (movie, err) in
             
             guard let movie = movie else{
                 if let error = err {
@@ -39,19 +39,12 @@ class GameViewController: UIViewController {
                 return
             }
             
-            print(movie.name)
-            print(movie.cast)
-            print(movie.year.year)
-            print(movie.plot)
-            print(movie.imageURL)
-            print(movie.rating)
-            
             self.nameLbl.text = movie.name
             self.yearLbl.text = String(describing: movie.year.year)
             self.castLbl.text = movie.cast
             self.plotLbl.text = movie.plot
             
-            self.getImage(withImageUrl: movie.imageURL, imageDownloadCompletion: { (posterImg, err) in
+            AlamofireService.instance.getImage(withImageUrl: movie.imageURL, imageDownloadCompletion: { (posterImg, err) in
                 
                 guard let poster = posterImg else {
                     if let error = err {
@@ -70,43 +63,6 @@ class GameViewController: UIViewController {
         
     }
     
-    func populateLbls(withMovieID id: String, movieDownloadCompletion: @escaping (_ movie: Movie?, _ error: Error?) -> ()) {
-        Alamofire.request("\(BASE_URL)\(id)").validate().responseObject { (response: DataResponse<Movie>) in
-            
-            guard response.result.isSuccess else {
-                movieDownloadCompletion(nil, response.error)
-                return
-            }
-            
-            guard let movie = response.result.value else {
-                movieDownloadCompletion(nil, nil)
-                return
-            }
-            
-            movieDownloadCompletion(movie, nil)
-            
-        }
-    }
-    
-    func getImage(withImageUrl url: String, imageDownloadCompletion: @escaping (_ poster: Image?, _ error: Error?) -> ()){
-        Alamofire.request(url).responseImage { response in
-            
-            guard response.result.isSuccess else {
-                imageDownloadCompletion(nil, response.error)
-                return
-            }
-        
-            guard let image = response.result.value else {
-                imageDownloadCompletion(nil, nil)
-                return
-            }
-        
-            imageDownloadCompletion(image, nil)
-
-        }
-        
-    }
-    
 
     @IBAction func closeBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -114,16 +70,3 @@ class GameViewController: UIViewController {
 
 }
 
-extension UIViewController{
-    func hideKeyboard(){
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(UIViewController.dismissKeyboard))
-        
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard(){
-        view.endEditing(true)
-    }
-}

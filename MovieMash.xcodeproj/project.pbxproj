@@ -8,10 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		5A5C8BA520957686007647A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C8BA420957686007647A5 /* AppDelegate.swift */; };
-		5A5C8BA720957686007647A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C8BA620957686007647A5 /* ViewController.swift */; };
+		5A5C8BA720957686007647A5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C8BA620957686007647A5 /* LoginVC.swift */; };
 		5A5C8BAA20957686007647A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C8BA820957686007647A5 /* Main.storyboard */; };
 		5A5C8BAC20957686007647A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C8BAB20957686007647A5 /* Assets.xcassets */; };
 		5A5C8BAF20957686007647A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C8BAD20957686007647A5 /* LaunchScreen.storyboard */; };
+		5A9BB384209B005A0032096A /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9BB383209B005A0032096A /* AlamofireService.swift */; };
+		5A9BB386209B01330032096A /* LeaderboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9BB385209B01330032096A /* LeaderboardVC.swift */; };
+		5A9BB388209B06880032096A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A9BB387209B06870032096A /* GoogleService-Info.plist */; };
+		5A9BB38A209B08450032096A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9BB389209B08450032096A /* AuthService.swift */; };
+		5A9BB38C209B08630032096A /* FBDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9BB38B209B08630032096A /* FBDataService.swift */; };
+		5A9BB38E209B08CC0032096A /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9BB38D209B08CC0032096A /* extensions.swift */; };
+		5A9BB390209B1FF30032096A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9BB38F209B1FF30032096A /* User.swift */; };
 		5AA0CE75209ABAAF00E016D7 /* movieBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0CE74209ABAAF00E016D7 /* movieBorder.swift */; };
 		5AA0CE77209AC51E00E016D7 /* RatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0CE76209AC51E00E016D7 /* RatingTextField.swift */; };
 		5AA0CE79209AD8AF00E016D7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0CE78209AD8AF00E016D7 /* GameViewController.swift */; };
@@ -25,11 +32,18 @@
 		11E79BF07292099D46D96596 /* Pods_MovieMash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieMash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5C8BA120957686007647A5 /* MovieMash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5C8BA420957686007647A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A5C8BA620957686007647A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5A5C8BA620957686007647A5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5A5C8BA920957686007647A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A5C8BAB20957686007647A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A5C8BAE20957686007647A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A5C8BB020957686007647A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A9BB383209B005A0032096A /* AlamofireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
+		5A9BB385209B01330032096A /* LeaderboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardVC.swift; sourceTree = "<group>"; };
+		5A9BB387209B06870032096A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A9BB389209B08450032096A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		5A9BB38B209B08630032096A /* FBDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDataService.swift; sourceTree = "<group>"; };
+		5A9BB38D209B08CC0032096A /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		5A9BB38F209B1FF30032096A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5AA0CE74209ABAAF00E016D7 /* movieBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieBorder.swift; sourceTree = "<group>"; };
 		5AA0CE76209AC51E00E016D7 /* RatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTextField.swift; sourceTree = "<group>"; };
 		5AA0CE78209AD8AF00E016D7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +76,7 @@
 		5A5C8B9820957686007647A5 = {
 			isa = PBXGroup;
 			children = (
+				5A9BB387209B06870032096A /* GoogleService-Info.plist */,
 				5A5C8BA320957686007647A5 /* MovieMash */,
 				5A5C8BA220957686007647A5 /* Products */,
 				3630BF52FCBBFB1D7F494682 /* Pods */,
@@ -98,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				5AE5F7B8209ADFF000E5A876 /* Movie.swift */,
+				5A9BB38F209B1FF30032096A /* User.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -114,8 +130,9 @@
 		5AA0CE71209ABA6B00E016D7 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				5A5C8BA620957686007647A5 /* ViewController.swift */,
+				5A5C8BA620957686007647A5 /* LoginVC.swift */,
 				5AA0CE78209AD8AF00E016D7 /* GameViewController.swift */,
+				5A9BB385209B01330032096A /* LeaderboardVC.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -123,6 +140,9 @@
 		5AA0CE73209ABA8500E016D7 /* service */ = {
 			isa = PBXGroup;
 			children = (
+				5A9BB383209B005A0032096A /* AlamofireService.swift */,
+				5A9BB389209B08450032096A /* AuthService.swift */,
+				5A9BB38B209B08630032096A /* FBDataService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -131,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				5AB09B0D209AF0A9007A485D /* constants.swift */,
+				5A9BB38D209B08CC0032096A /* extensions.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -205,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A5C8BAF20957686007647A5 /* LaunchScreen.storyboard in Resources */,
+				5A9BB388209B06880032096A /* GoogleService-Info.plist in Resources */,
 				5A5C8BAC20957686007647A5 /* Assets.xcassets in Resources */,
 				5A5C8BAA20957686007647A5 /* Main.storyboard in Resources */,
 			);
@@ -274,13 +296,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A9BB390209B1FF30032096A /* User.swift in Sources */,
+				5A9BB386209B01330032096A /* LeaderboardVC.swift in Sources */,
 				5AA0CE79209AD8AF00E016D7 /* GameViewController.swift in Sources */,
 				5AA0CE75209ABAAF00E016D7 /* movieBorder.swift in Sources */,
+				5A9BB384209B005A0032096A /* AlamofireService.swift in Sources */,
+				5A9BB38C209B08630032096A /* FBDataService.swift in Sources */,
 				5AE5F7B9209ADFF000E5A876 /* Movie.swift in Sources */,
 				5AB09B0E209AF0A9007A485D /* constants.swift in Sources */,
-				5A5C8BA720957686007647A5 /* ViewController.swift in Sources */,
+				5A5C8BA720957686007647A5 /* LoginVC.swift in Sources */,
+				5A9BB38A209B08450032096A /* AuthService.swift in Sources */,
 				5AA0CE77209AC51E00E016D7 /* RatingTextField.swift in Sources */,
 				5A5C8BA520957686007647A5 /* AppDelegate.swift in Sources */,
+				5A9BB38E209B08CC0032096A /* extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

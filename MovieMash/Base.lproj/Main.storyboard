@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IOm-L6-vAt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WoT-xu-2gq">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,10 +19,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MovieMash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="BYZ-38-t0r" customClass="LoginVC" customModule="MovieMash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,11 +52,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="S7S-O9-f0e">
                                 <rect key="frame" x="40" y="193" width="358" height="100"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="yjo-ub-VEb" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="yjo-ub-VEb" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="45"/>
                                         <color key="textColor" red="0.0" green="0.59492417890000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits" textContentType="nickname"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                 <color key="value" red="0.0" green="0.55294117649999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -76,7 +76,7 @@
                                         <rect key="frame" x="0.0" y="55" width="358" height="45"/>
                                         <color key="textColor" red="0.0" green="0.55294117649999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.59492417890000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -116,6 +116,9 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EQh-ng-rvt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -134,15 +137,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="yjo-ub-VEb" id="DB0-PI-7kU"/>
+                        <outlet property="passwordField" destination="hNM-sg-4e6" id="paG-zd-fdZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-42.028985507246382" y="123.09782608695653"/>
         </scene>
-        <!--View Controller-->
+        <!--LeaderboardVC-->
         <scene sceneID="o36-Bi-2UX">
             <objects>
-                <viewController id="WoT-xu-2gq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameListVC" id="WoT-xu-2gq" customClass="LeaderboardVC" customModule="MovieMash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zMO-Bs-aqT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,6 +164,9 @@
                                             <constraint firstAttribute="width" constant="60" id="iiB-rL-XIY"/>
                                         </constraints>
                                         <state key="normal" image="plus"/>
+                                        <connections>
+                                            <action selector="plusBtnPressed:" destination="WoT-xu-2gq" eventType="touchUpInside" id="Ftt-dX-vr3"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Mash" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdj-Q2-5cN">
                                         <rect key="frame" x="139" y="32.666666666666664" width="136.33333333333337" height="29.333333333333336"/>
@@ -164,12 +174,26 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIU-Sn-pCu">
+                                        <rect key="frame" x="8" y="27" width="60" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="3XU-7q-m8F"/>
+                                            <constraint firstAttribute="width" constant="60" id="DhB-Ui-DEi"/>
+                                        </constraints>
+                                        <state key="normal" image="logout"/>
+                                        <connections>
+                                            <action selector="logoutBtnPressed:" destination="WoT-xu-2gq" eventType="touchUpInside" id="8fP-oX-Os4"/>
+                                            <action selector="plusBtnPressed:" destination="WoT-xu-2gq" eventType="touchUpInside" id="I0A-Kg-vrf"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.55230325459999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Mto-MJ-wPV" firstAttribute="centerY" secondItem="cdj-Q2-5cN" secondAttribute="centerY" id="EQB-4J-65g"/>
                                     <constraint firstAttribute="trailing" secondItem="Mto-MJ-wPV" secondAttribute="trailing" constant="8" id="Kcw-p3-4t9"/>
+                                    <constraint firstItem="XIU-Sn-pCu" firstAttribute="leading" secondItem="5tR-JW-Tnj" secondAttribute="leading" constant="8" id="MlT-tf-uhO"/>
                                     <constraint firstAttribute="bottom" secondItem="Mto-MJ-wPV" secondAttribute="bottom" constant="8" id="asb-Js-Zyv"/>
+                                    <constraint firstItem="cdj-Q2-5cN" firstAttribute="centerY" secondItem="XIU-Sn-pCu" secondAttribute="centerY" id="hhI-mb-QTL"/>
                                     <constraint firstItem="cdj-Q2-5cN" firstAttribute="centerX" secondItem="5tR-JW-Tnj" secondAttribute="centerX" id="jUm-G8-6Wb"/>
                                     <constraint firstAttribute="height" constant="75" id="jWX-iN-1hQ"/>
                                 </constraints>
@@ -183,6 +207,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gWT-hL-Bck"/>
                     </view>
+                    <connections>
+                        <segue destination="IOm-L6-vAt" kind="show" identifier="NewGame" id="epX-fs-7K0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRY-v2-DwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,7 +263,7 @@
                                                 <rect key="frame" x="0.0" y="864" width="414" height="136"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fun Fact: A mushroom is neither a fruit nor a vegetable; technically mushrooms aren't even plants. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coS-Qn-zi5">
-                                                        <rect key="frame" x="50" y="8" width="314" height="120"/>
+                                                        <rect key="frame" x="24" y="50" width="366" height="36"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -244,11 +271,11 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.80784313730000001" green="0.3294117647" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="coS-Qn-zi5" secondAttribute="trailing" constant="50" id="IQA-GS-O4W"/>
+                                                    <constraint firstAttribute="trailing" secondItem="coS-Qn-zi5" secondAttribute="trailing" constant="24" id="L5Z-Jo-mp4"/>
                                                     <constraint firstAttribute="height" constant="136" id="TIX-k8-Xel"/>
-                                                    <constraint firstItem="coS-Qn-zi5" firstAttribute="top" secondItem="IoB-oK-hY1" secondAttribute="top" constant="8" id="X6q-Em-iCe"/>
-                                                    <constraint firstAttribute="bottom" secondItem="coS-Qn-zi5" secondAttribute="bottom" constant="8" id="ba0-Hj-kMJ"/>
-                                                    <constraint firstItem="coS-Qn-zi5" firstAttribute="leading" secondItem="IoB-oK-hY1" secondAttribute="leading" constant="50" id="uh9-Cc-ryG"/>
+                                                    <constraint firstItem="coS-Qn-zi5" firstAttribute="top" secondItem="IoB-oK-hY1" secondAttribute="top" constant="50" id="V4i-1K-ChT"/>
+                                                    <constraint firstItem="coS-Qn-zi5" firstAttribute="leading" secondItem="IoB-oK-hY1" secondAttribute="leading" constant="24" id="XRQ-uN-XoU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="coS-Qn-zi5" secondAttribute="bottom" constant="50" id="hs8-L1-3y3"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2c0-5P-Cwi" customClass="movieBorder" customModule="MovieMash" customModuleProvider="target">
@@ -408,6 +435,7 @@
     </scenes>
     <resources>
         <image name="close" width="33" height="33"/>
+        <image name="logout" width="33" height="33"/>
         <image name="network" width="100" height="157"/>
         <image name="percent" width="26" height="26"/>
         <image name="plus" width="30" height="30"/>
