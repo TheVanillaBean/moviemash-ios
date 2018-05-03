@@ -12,6 +12,9 @@
 		5A5C8BAA20957686007647A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C8BA820957686007647A5 /* Main.storyboard */; };
 		5A5C8BAC20957686007647A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C8BAB20957686007647A5 /* Assets.xcassets */; };
 		5A5C8BAF20957686007647A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C8BAD20957686007647A5 /* LaunchScreen.storyboard */; };
+		5AA0CE75209ABAAF00E016D7 /* movieBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0CE74209ABAAF00E016D7 /* movieBorder.swift */; };
+		5AA0CE77209AC51E00E016D7 /* RatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0CE76209AC51E00E016D7 /* RatingTextField.swift */; };
+		5AA0CE79209AD8AF00E016D7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0CE78209AD8AF00E016D7 /* GameViewController.swift */; };
 		E6556710ACE928CCE5133B2B /* Pods_MovieMash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E79BF07292099D46D96596 /* Pods_MovieMash.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +28,9 @@
 		5A5C8BAB20957686007647A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A5C8BAE20957686007647A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A5C8BB020957686007647A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AA0CE74209ABAAF00E016D7 /* movieBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieBorder.swift; sourceTree = "<group>"; };
+		5AA0CE76209AC51E00E016D7 /* RatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTextField.swift; sourceTree = "<group>"; };
+		5AA0CE78209AD8AF00E016D7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		6315A973ACABDDC55DD1CF79 /* Pods-MovieMash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMash.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieMash/Pods-MovieMash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,14 +76,49 @@
 		5A5C8BA320957686007647A5 /* MovieMash */ = {
 			isa = PBXGroup;
 			children = (
+				5AA0CE73209ABA8500E016D7 /* service */,
+				5AA0CE71209ABA6B00E016D7 /* controller */,
+				5AA0CE70209ABA6500E016D7 /* view */,
+				5AA0CE6E209ABA5800E016D7 /* model */,
 				5A5C8BA420957686007647A5 /* AppDelegate.swift */,
-				5A5C8BA620957686007647A5 /* ViewController.swift */,
 				5A5C8BA820957686007647A5 /* Main.storyboard */,
 				5A5C8BAB20957686007647A5 /* Assets.xcassets */,
 				5A5C8BAD20957686007647A5 /* LaunchScreen.storyboard */,
 				5A5C8BB020957686007647A5 /* Info.plist */,
 			);
 			path = MovieMash;
+			sourceTree = "<group>";
+		};
+		5AA0CE6E209ABA5800E016D7 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		5AA0CE70209ABA6500E016D7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				5AA0CE74209ABAAF00E016D7 /* movieBorder.swift */,
+				5AA0CE76209AC51E00E016D7 /* RatingTextField.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		5AA0CE71209ABA6B00E016D7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				5A5C8BA620957686007647A5 /* ViewController.swift */,
+				5AA0CE78209AD8AF00E016D7 /* GameViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		5AA0CE73209ABA8500E016D7 /* service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 		884104CA044F4B8B5CF05AEC /* Frameworks */ = {
@@ -211,7 +252,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AA0CE79209AD8AF00E016D7 /* GameViewController.swift in Sources */,
+				5AA0CE75209ABAAF00E016D7 /* movieBorder.swift in Sources */,
 				5A5C8BA720957686007647A5 /* ViewController.swift in Sources */,
+				5AA0CE77209AC51E00E016D7 /* RatingTextField.swift in Sources */,
 				5A5C8BA520957686007647A5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

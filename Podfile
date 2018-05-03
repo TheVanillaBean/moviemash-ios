@@ -12,6 +12,7 @@ target 'MovieMash' do
   pod 'Firebase/Auth'
   pod 'Alamofire', '~> 4.7'
   pod 'TextFieldEffects'
+  pod 'SwiftyJSON', '~> 4.0'
 
   post_install do |installer|
       installer.pods_project.build_configurations.each do |config|
